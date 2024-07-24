@@ -1,3 +1,14 @@
+/********************************************
+* Main.cpp is the main driver for the program. It reads 
+* input from an external file in order to determine arrival 
+* times at a car wash, creates new instances of the Car class 
+* in order to track car wash data, and calculates statistics for the 
+* car wash at the end of 1 day. 
+*
+* Author: Cabri Chamberlin
+* Version: July 22, 2024 
+*********************************************/
+
 #include "Car.h"
 #include <string> 
     using std::string; 

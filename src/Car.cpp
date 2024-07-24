@@ -1,3 +1,12 @@
+/********************************************
+* Car.cpp contains the implementation for the Car 
+* class, as defined in Car.h
+* 
+*
+* Author: Cabri Chamberlin
+* Version: July 22, 2024 
+*********************************************/
+
 #include "Car.h"
 #include <iostream> 
 #include <iomanip>
@@ -6,13 +15,21 @@
 int Car::carCount = 0; 
 
 std::ostream& operator << (std::ostream& output, Car& aCar) {
-    output << setw(0) 
-    << aCar.getArrivalTime() << setw(13) 
-    << aCar.getStartTime() << setw(13)
-    << aCar.getWaitTime() << setw(11)
-    << aCar.getDepartTime() << setw(12)
-    << aCar.getTotalTime() << setw(12)
-    <<std::endl; 
+    if (aCar.getArrivalTime() >= 540) {
+         output << setw(0) 
+         << aCar.getArrivalTime() << setw(13) 
+         << "Car arrived after close and was not serviced" << std::endl; 
+    }
+    else {
+        output << setw(0) 
+        << aCar.getArrivalTime() << setw(13) 
+        << aCar.getStartTime() << setw(13)
+        << aCar.getWaitTime() << setw(11)
+        << aCar.getDepartTime() << setw(12)
+        << aCar.getTotalTime() << setw(12)
+        <<std::endl; 
+    }
+
 }
 
 Car::Car(int theArrivalTime) {
